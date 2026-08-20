@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/jensen-org/plugin-store/main/schema.json",
+  "title": "Jensen plugin store entry",
+  "description": "One published plugin. Each file under entries/ holds exactly one of these; CI builds index.json from all of them.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "author",
+    "description",
+    "category",
+    "version",
+    "min_app_version",
+    "repo",
+    "sha256"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+(\\.[a-z0-9-]+)+$",
+      "description": "Reverse-DNS publisher.name. Stable across versions, used as the install directory name, and must match the id in the release manifest."
+    },
+    "name": { "type": "string", "minLength": 1, "description": "Display name." },
+    "author": { "type": "string", "minLength": 1, "description": "Shown on the card." },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-line summary shown on the card. The long form belongs in the plugin's README."
+    },
+    "category": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Free-form grouping, e.g. lint, graph, theme."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Must equal the version in the release manifest."
+    },
+    "min_app_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Display only. The release manifest is authoritative and re-checked at install."
+    },
+    "repo": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$",
+      "description": "GitHub owner/name hosting the release. Assets are fetched from github.com/<repo>/releases/download/<tag>/."
+    },
+    "tag": {
+      "type": "string",
+      "pattern": "^[^/\\s]+$",
+      "description": "Release tag, when it differs from version. A monorepo shipping several plugins needs one tag per plugin, by convention <plugin>-v<version>. Omitted means the tag is the version."
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$",
+      "description": "Checksum of the release manifest.json. That manifest pins every artifact it ships, so this one hash vouches for the whole download."
+    }
+  }
+}

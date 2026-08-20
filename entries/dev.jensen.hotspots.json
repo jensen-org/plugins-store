@@ -1,0 +1,12 @@
+{
+  "id": "dev.jensen.hotspots",
+  "name": "Hotspots",
+  "author": "Jensen",
+  "description": "Rank services by change frequency crossed with how much depends on them.",
+  "category": "graph",
+  "version": "0.1.0",
+  "min_app_version": "0.0.0",
+  "repo": "jensen-org/official-plugins",
+  "tag": "hotspots-v0.1.0",
+  "sha256": "13a4c766fde99e5c72672452d1d7b5cfb7948d3fe4dcccfa44c94fb1c016b1a3"
+}

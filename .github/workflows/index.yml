@@ -1,0 +1,48 @@
+name: store
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate entries against the schema
+        run: node scripts/validate.mjs
+      - name: Verify every release exists and matches its checksum
+        run: node scripts/verify.mjs
+      - name: The catalog builds
+        run: node scripts/build-index.mjs
+
+  publish:
+    needs: check
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Rebuild and commit the catalog
+        run: |
+          node scripts/build-index.mjs
+          if git diff --quiet -- index.json; then
+            echo "catalog already current"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.json
+          git commit -m 'chore(store): rebuild the catalog'
+          git push
