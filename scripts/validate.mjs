@@ -45,8 +45,8 @@ function check(value, schema, path, errors) {
 
 const files = readdirSync("entries").filter((f) => f.endsWith(".json")).sort();
 if (files.length === 0) {
-  console.error("entries/ is empty; there is nothing to publish");
-  process.exit(1);
+  console.log("entries/ is empty: the catalog lists no plugins yet");
+  process.exit(0);
 }
 
 const errors = [];
