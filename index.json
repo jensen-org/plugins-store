@@ -1,28 +1,3 @@
 {
-  "plugins": [
-    {
-      "id": "dev.jensen.common-themes",
-      "name": "Common Themes",
-      "author": "Jensen",
-      "description": "Thirteen ported palettes the app no longer ships built in: Dracula Alucard, Gruvbox, Kanagawa, One, Rose Pine Moon, Solarized and Tokyo Night.",
-      "category": "theme",
-      "version": "0.1.0",
-      "min_app_version": "0.0.0",
-      "repo": "jensen-org/official-plugins",
-      "tag": "common-themes-v0.1.0",
-      "sha256": "b0a9affa3edd3efb604043203790a72394af25b5a5f2b6bab1b0cd869e113527"
-    },
-    {
-      "id": "dev.jensen.hotspots",
-      "name": "Hotspots",
-      "author": "Jensen",
-      "description": "Rank services by change frequency crossed with how much depends on them.",
-      "category": "graph",
-      "version": "0.1.0",
-      "min_app_version": "0.0.0",
-      "repo": "jensen-org/official-plugins",
-      "tag": "hotspots-v0.1.0",
-      "sha256": "13a4c766fde99e5c72672452d1d7b5cfb7948d3fe4dcccfa44c94fb1c016b1a3"
-    }
-  ]
+  "plugins": []
 }
