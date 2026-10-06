@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/jensen-org/plugin-store/main/schema.json",
+  "$id": "https://raw.githubusercontent.com/jensen-org/plugins-store/main/schema.json",
   "title": "Jensen plugin store entry",
   "description": "One published plugin. Each file under entries/ holds exactly one of these; CI builds index.json from all of them.",
   "type": "object",

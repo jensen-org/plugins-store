@@ -6,7 +6,7 @@ plugin, saying where its release lives and what its checksum is.
 Jensen fetches:
 
 ```
-https://raw.githubusercontent.com/jensen-org/plugin-store/main/index.json
+https://raw.githubusercontent.com/jensen-org/plugins-store/main/index.json
 ```
 
 That URL is read **anonymously, with no credential, ever**. A token shipped inside a desktop app can
