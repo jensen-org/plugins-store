@@ -1,0 +1,12 @@
+{
+  "id": "dev.jensen.images-tools",
+  "name": "Images Tools",
+  "author": "Jensen",
+  "description": "Resize, compress, round the corners of and convert images right on Jensen's image page, with a Rust backend that agents can call too",
+  "category": "media",
+  "version": "0.1.0",
+  "min_app_version": "0.3.0",
+  "repo": "jensen-org/official-plugins",
+  "tag": "images-tools-v0.1.0",
+  "sha256": "db5f64a7ced2dea2d92c156532f3b6b2a2e58aacc1f77163217da161d3584b14"
+}
