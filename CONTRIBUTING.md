@@ -17,9 +17,9 @@ starting from nothing.
 3. **Open a pull request against `develop`.** CI validates the entry and downloads your release to confirm it exists
    and its checksum matches. Both must pass.
 
-Do not edit `index.json`. It is built from `entries/` and committed by CI when your PR lands on `develop`.
-Nothing is live until the maintainer reviews and approves the PR, then promotes `develop` into `main`, which is
-what the app reads.
+Do not edit `index.json`. The maintainer rebuilds it from `entries/` (`node scripts/build-index.mjs`) when promoting
+`develop` into `main`, which is what the app reads. Nothing is live until the maintainer has reviewed and approved
+your PR.
 
 ## Requirements
 
