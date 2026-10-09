@@ -14,10 +14,12 @@ starting from nothing.
 2. **Add one file:** `entries/<your-id>.json`, containing exactly the entry `jensen publish` printed.
    The filename must match the `id` inside it.
 
-3. **Open a pull request.** CI validates the entry and downloads your release to confirm it exists
+3. **Open a pull request against `develop`.** CI validates the entry and downloads your release to confirm it exists
    and its checksum matches. Both must pass.
 
-Do not edit `index.json`. It is built from `entries/` and committed by CI when your PR lands.
+Do not edit `index.json`. It is built from `entries/` and committed by CI when your PR lands on `develop`.
+Nothing is live until the maintainer reviews and approves the PR, then promotes `develop` into `main`, which is
+what the app reads.
 
 ## Requirements
 

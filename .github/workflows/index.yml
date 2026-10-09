@@ -2,7 +2,7 @@ name: store
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
 
 permissions:
@@ -22,10 +22,13 @@ jobs:
         run: node scripts/verify.mjs
       - name: The catalog builds
         run: node scripts/build-index.mjs
+      - name: The catalog is current before it reaches main
+        if: github.base_ref == 'main' || github.ref == 'refs/heads/main'
+        run: git diff --exit-code -- index.json
 
   publish:
     needs: check
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     permissions:
       contents: write
