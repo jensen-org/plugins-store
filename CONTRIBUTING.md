@@ -1,7 +1,7 @@
 # Submitting a plugin
 
 You need a plugin that is already built, released, and documented. See
-[AUTHORING.md](https://github.com/jensen-org/official-plugins/blob/main/AUTHORING.md) if you are
+the [plugin SDK docs](https://github.com/jensen-org/plugin-sdk/tree/main/docs) if you are
 starting from nothing.
 
 ## Steps

@@ -67,5 +67,5 @@ An entry that cannot be installed can no longer be merged.
 
 ## Publishing
 
-See `CONTRIBUTING.md`. Plugin authoring itself is documented in
-[jensen-org/official-plugins](https://github.com/jensen-org/official-plugins/blob/main/AUTHORING.md).
+See `CONTRIBUTING.md`. Plugin authoring itself is documented with the
+[plugin SDK](https://github.com/jensen-org/plugin-sdk/tree/main/docs).
